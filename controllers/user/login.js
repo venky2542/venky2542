@@ -5,12 +5,13 @@ const User = require('../../models/users');
 
 async function loginUser(req, res) {
           try {
-            const { username, password } = req.body;
-            const user = await User.findOne({ username });
+            const { name ,email , password } = req.body;
+            const user = await User.findOne({ email });
         
-            if (user && (await bcrypt.compare(password, user.password))) {
-              const token = jwt.sign({ username: user.username }, 'your-secret-key', { expiresIn: '1h' });
-              res.status(200).json({ token });
+            if (user && (await (password, user.password))) {
+              const token = jwt.sign({ email : user.email }, '1334')
+              res.status(200).json({ token , message: 'User logged in successfully' });
+             
             } else {
               res.status(401).json({ error: 'Invalid credentials' });
             }

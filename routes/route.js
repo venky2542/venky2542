@@ -25,4 +25,5 @@ router.post('/registeradmin', registerAdmin.registerAdmin);
 router.post('/loginAdmin', loginAdmin.loginAdmin);
 
 
+
 module.exports = router;

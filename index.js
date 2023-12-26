@@ -11,7 +11,8 @@ mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection 
 
 app.use(bodyParser.json());
 
-app.use('/auth', authRoutes);
+app.use('/auth', authRoutes)
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
